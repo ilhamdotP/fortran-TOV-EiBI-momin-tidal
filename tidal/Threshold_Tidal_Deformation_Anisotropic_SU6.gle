@@ -1,0 +1,87 @@
+size 15 15
+
+amove 2 3
+begin graph
+scale auto
+        nobox
+        size 10 10
+	fullsize
+	nobox
+	xtitle "PAISO"
+	ytitle "\Lambda_{1.4}"
+        yaxis min 0 max 1200 dticks 400 hei .5
+        yticks length .1
+        xaxis min -3 max 3 dticks 1 hei .5
+        xticks length .1
+
+	   
+	 data   data_SU6_BL_1.txt d1=c1,c2
+         d1 marker fcircle color red
+
+	data   data_SU6_BL_15.txt d2=c1,c2
+        d2 marker fcircle color red
+	
+	data data_SU6_BL_182.txt d3=c1,c2
+	d3 marker fcircle color red
+
+	data data_SU6_BL_2.txt d5=c1,c2
+	d5 marker fcircle color red
+
+	data data_SU6_BL_25.txt d6=c1,c2
+	d6 marker fcircle color red
+
+	data data_SU6_DY_1.txt d7=c1,c2
+	d7 marker ftriangle color blue
+ 
+	data data_SU6_DY_115.txt d8=c1,c2
+         d8 marker ftriangle color blue
+
+	data data_SU6_DY_15.txt d9=c1,c2
+        d9 marker ftriangle color blue
+
+	data data_SU6_DY_20.txt d10=c1,c2
+	d10 marker ftriangle color blue
+
+	data data_SU6_DY_25.txt d11=c1,c2
+	d11 marker ftriangle color blue
+
+	data data_SU6_HB_08.txt d12=c1,c2
+	d12 marker fsquare color green
+
+	data data_SU6_HB_095.txt d13=c1,c2
+	d13 marker fsquare color green
+
+	data data_SU6_HB_09.txt d14=c1,c2
+	d14 marker fsquare color green
+
+	data data_SU6_HB_085.txt d15=c1,c2
+	d15 marker fsquare color green
+
+	data data_SU6_HB_075.txt d16=c1,c2
+	d16 marker fsquare color green
+
+	data data_SU6_ISO.txt d17=c1,c2
+	d17 marker fdiamond color black
+
+	data batas_atas_gw.txt d18=c1,c2
+	d18 line lstyle 1 lwidth 0.05 color orange
+
+	data batas_bawah_gw.txt d19=c1,c2
+	d19 line lstyle 1 lwidth 0.05 color orange
+
+	fill d18,d19 color orange
+
+
+end graph
+
+begin key
+position tl
+ hei .3
+nobox
+marker fcircle color red  text "PAISO = \lambda_{BL}"
+marker ftriangle color blue text "PAISO = \Upsilon"
+marker fsquare color green text "PAISO = (-8h+7)"
+marker fdiamond color black text "PAISO = 0"
+marker fsquare color orange text "GW170817"
+end key
+

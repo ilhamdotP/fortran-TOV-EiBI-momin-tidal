@@ -1,0 +1,264 @@
+size 22 36
+set hei .7 just cent
+
+amove 3 3
+begin graph
+    dn msize 0.6
+    nobox 
+    size 18 10 
+    fullsize
+
+    nobox
+
+    xaxis min 10 max 15  hei .7 dticks 1.0
+      xticks length 0.3
+     yaxis  min 0.0 max 3  hei .7 dticks 0.5 nolast
+      yticks length 0.3
+     ytitle "M (M_{\odot}) "  hei 1 
+     xtitle "R (km)" hei 1
+
+     
+
+     data  RadmassNS_SU6_BL_1_PCC230.dat d21=c4,c5
+     d21 line lstyle 5 color brown lwidth 0.1   
+ 
+     data  RadmassNS_SU6_BL_15_PCC230.dat d31=c4,c5 
+     d31 line lstyle 1 color blue lwidth 0.1  
+           
+
+     data RadmassNS_SU6_BL_182_PCC230.dat  d41=c4,c5 
+     d41 line lstyle 2 color magenta lwidth 0.1
+
+     data  RadmassNS_SU6_BL_25.dat d51=c4,c5 
+     d51 line lstyle 3 color lightgreen lwidth 0.1
+
+     data  BSP_MISI.dat d11=c3,c5 
+     d11 line lstyle 6 color black lwidth 0.1
+
+   
+     let d93 =2.05 from 10 to 15
+      let d94 =2.24 from 10 to 15 
+       
+      fill d93,d94 color grey
+
+!      let d81=1.36 from 10.85 to 13.41
+!      let d82=1.46 from 10.85 to 13.41
+!      fill d81,d82  color lightgreen
+
+!     let d36=1.32 from 11.3 to 13.2
+!      let d35=1.42 from 11.3 to 13.2
+!      fill d35,d36  color yellow
+
+     data canonical2.dat d36=c1,c2 d37=c1,c3 d38=c1,c4
+     d36 marker fsquare color red herrleft d37 herrright d38 lwidth 0.1
+
+     data canonical.dat d81=c1,c2 d82=c1,c3 d83=c1,c4
+     d81 marker fcircle color green herrleft d82 herrright d83 lwidth 0.1
+
+     let d71 = 1.911 from 10 to 15
+     let d72 = 1.945 from 10 to 15
+
+     fill d71,d72 color pink
+
+
+end graph
+
+begin key
+position bl
+ hei .7
+nobox
+line lstyle 5 color  brown  lwidth 0.1 text "\lambda_{BL}=1"
+line lstyle 1 color  blue  lwidth 0.1 text "\lambda_{BL}=1.5"
+line lstyle 2 color  magenta  lwidth 0.1 text "\lambda_{BL}=1.82"
+line lstyle 3 color  lightgreen  lwidth 0.1 text "\lambda_{BL}=2.5"
+end key
+
+
+begin key
+position tr
+ hei .65
+nobox
+marker fsquare msize 0.7 color  grey  text "J0740+6620"
+marker fsquare msize 0.7 color  pink text " J1614-2230"
+end key
+
+begin key
+position tl
+ hei .65
+nobox
+text "(c)"
+end key
+
+amove 3 13
+begin graph
+    dn msize 0.6
+    nobox 
+    size 18 10 
+    fullsize
+
+    nobox
+
+    xaxis min 10 max 15  hei .7 dticks 1.0
+      xticks length 0.3
+     yaxis  min 0.0 max 3  hei .7 dticks 0.5 nofirst nolast
+      yticks length 0.3
+     ytitle "M (M_{\odot}) "  hei 1 
+!     xtitle "R (km)" hei .7
+     xlabels off
+     
+
+     data  RadmassNS_SU6_DY_115_PCC230.dat  d21=c4,c5
+     d21 line lstyle 5 color brown lwidth 0.1   
+ 
+     data  RadmassNS_SU6_DY_15_PCC230.dat d31=c4,c5 
+     d31 line lstyle 1 color blue lwidth 0.1  
+           
+
+     data RadmassNS_SU6_DY_20_PCC230.dat  d41=c4,c5 
+     d41 line lstyle 2 color magenta lwidth 0.1
+
+     data  RadmassNS_SU6_DY_25_PCC230.dat d51=c4,c5 
+     d51 line lstyle 3 color lightgreen lwidth 0.1
+
+     data  BSP_MISI.dat d11=c3,c5 
+     d11 line lstyle 6 color black lwidth 0.1  
+   
+       let d93 =2.05 from 10 to 15
+       let d94 =2.24 from 10 to 15 
+       
+       fill d93,d94 color grey
+
+!      let d81=1.36 from 10.85 to 13.41
+!      let d82=1.46 from 10.85 to 13.41
+!      fill d81,d82  color lightgreen
+
+!      let d36=1.32 from 11.3 to 13.2
+!      let d35=1.42 from 11.3 to 13.2
+!      fill d35,d36  color yellow
+
+     data canonical2.dat d36=c1,c2 d37=c1,c3 d38=c1,c4
+     d36 marker fsquare color red herrleft d37 herrright d38 lwidth 0.1
+
+     data canonical.dat d81=c1,c2 d82=c1,c3 d83=c1,c4
+     d81 marker fcircle color green herrleft d82 herrright d83 lwidth 0.1
+
+
+     let d71 = 1.911 from 10 to 15
+     let d72 = 1.945 from 10 to 15
+     fill d71,d72 color pink
+
+
+end graph
+begin key
+position tr
+ hei .7
+nobox
+line lstyle 6 color  black  lwidth 0.1 text "ISO"
+end key
+
+begin key
+position bl
+ hei .7
+nobox
+line lstyle 5 color  brown  lwidth 0.1 text "\Upsilon=-1.15"
+line lstyle 1 color  blue  lwidth 0.1 text "\Upsilon=-1.5"
+line lstyle 2 color  magenta  lwidth 0.1 text "\Upsilon=-2"
+line lstyle 3 color  lightgreen  lwidth 0.1 text "\Upsilon=-2.5"
+end key
+
+begin key
+position tl
+ hei .65
+nobox
+text "(b)"
+end key
+
+
+amove 3 23
+begin graph
+    dn msize 0.6
+    nobox 
+    size 18 10 
+    fullsize
+
+    nobox
+
+    xaxis min 10 max 15  hei .7 dticks 1.0
+      xticks length 0.3
+     yaxis  min 0.0 max 3  hei .7 dticks 0.5 nofirst
+      yticks length 0.3
+     ytitle "M (M_{\odot}) "  hei 1
+
+     xlabels off
+    
+
+     data  RadmassNS_SU6_HB_95.dat d21=c4,c5
+     d21 line lstyle 5 color brown lwidth 0.1   
+ 
+     data  RadmassNS_SU6_HB_85.dat d31=c4,c5 
+     d31 line lstyle 1 color blue lwidth 0.1  
+           
+
+     data RadmassNS_SU6_HB_08_PCC230.dat  d41=c4,c5 
+     d41 line lstyle 2 color magenta lwidth 0.1
+
+     data  RadmassNS_SU6_HB_75.dat d51=c4,c5 
+     d51 line lstyle 3 color lightgreen lwidth 0.1
+
+     data  BSP_MISI.dat d11=c3,c5 
+     d11 line lstyle 6 color black lwidth 0.1
+   
+       let d93 =2.05 from 10 to 15
+       let d94 =2.24 from 10 to 15 
+       
+       fill d93,d94 color grey
+
+!      let d81=1.36 from 10.85 to 13.41
+!      let d82=1.46 from 10.85 to 13.41
+!      fill d81,d82  color lightgreen
+
+!      let d36=1.32 from 11.3 to 13.2
+!      let d35=1.42 from 11.3 to 13.2
+!      fill d35,d36  color yellow
+
+     data canonical2.dat d36=c1,c2 d37=c1,c3 d38=c1,c4
+     d36 marker fsquare color red herrleft d37 herrright d38 lwidth 0.1
+
+     data canonical.dat d81=c1,c2 d82=c1,c3 d83=c1,c4
+     d81 marker fcircle color green herrleft d82 herrright d83 lwidth 0.1
+
+
+
+     let d71 = 1.911 from 10 to 15
+     let d72 = 1.945 from 10 to 15
+     fill d71,d72 color pink
+
+
+end graph
+
+begin key
+position bl
+ hei .7
+nobox
+line lstyle 5 color  brown  lwidth 0.1 text "h=0.95"
+line lstyle 1 color  blue  lwidth 0.1 text "h=0.85"
+line lstyle 2 color  magenta  lwidth 0.1 text "h=0.8"
+line lstyle 3 color  lightgreen  lwidth 0.1 text "h=0.75"
+end key
+
+
+
+begin key
+position tr
+ hei .65
+nobox
+marker fcircle msize 0.7 color  green text "Landry et al 2020"
+marker fsquare msize 0.7 color  red text "Jiang et al 2019"
+end key
+
+begin key
+position tl
+ hei .65
+nobox
+text "(a)"
+end key

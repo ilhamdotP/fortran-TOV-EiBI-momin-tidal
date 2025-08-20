@@ -1,0 +1,148 @@
+size 13 24 
+set hei .9 just cent
+
+amove 1 12
+begin graph
+    dn msize 0.7
+    nobox 
+    size 12 10 
+
+    nobox
+
+     xaxis min 1 max 5 dticks 1  hei .7 
+    xticks length 0.3 
+
+
+     yaxis min 0 max 240 dticks 50 hei .7
+ 
+     yticks length 0.3
+     xtitle "\rho_N/\rho_0" hei .9
+     ytitle " P (MeV fm^{-3})"  hei .9
+
+    
+    data  basicOES_SNM_BSP.dat d12=c1,c2
+    let d1 = d12
+    d1 line lstyle 1 lwidth 0.1 color purple
+
+    data  basicOES_SNM_BKA22.dat d22=c1,c2
+    let d2 = d22
+    d2 line lstyle 2 lwidth 0.1 color red
+
+    data  basicOES_SNM_BSR12.dat d32=c1,c2
+    let d3 = d32
+    d3 line lstyle 3 lwidth 0.1 color blue
+
+     data daniel.dat  d88=c2,c3
+ 
+     let d8 = d88
+ 
+     d8  line lstyle 2 lwidth 0.05
+     fill d88 color grey50
+
+
+ 
+
+end graph
+
+
+
+begin key
+position br
+hei .6
+nobox
+text "(a)  "
+end key
+
+
+
+
+
+begin key
+position tl
+ hei .5
+nobox
+line lstyle 1 lwidth 0.1 color purple text "BSP "
+line lstyle 2 lwidth 0.1 color red text "BKA22 "
+line lstyle 3 lwidth 0.1 color blue text "BSR12 "
+end key
+
+
+amove 1 1
+begin graph
+    dn msize 0.2
+    nobox 
+    size 12 10 
+
+     xaxis  min 0.1 max 0.4 dticks 0.1  hei .7
+     xticks length 0.3 
+
+
+    yaxis min -20 max 0 dticks 5  hei .7
+    yticks length 0.3 
+    ysubticks length 0.1
+    
+    
+     xtitle "\rho_N (fm^{-3})" hei .9
+     ytitle " E/N (MeV)"  hei .9
+
+
+     data  basicBE_SNM_BSP.dat d12=c2,c3
+    let d1 = d12
+    d1 line lstyle 1 lwidth 0.1 color purple
+
+
+     data  basicBE_SNM_BKA22.dat d22=c2,c3
+     let d2 = d22
+     d2 line lstyle 2 lwidth 0.1 color red
+     
+     data  basicBE_SNM_BSR12.dat d42=c2,c3
+     let d4 = d42
+     d4 line lstyle 3 lwidth 0.1 color blue
+ 
+     data EOS1.pngX.dat  d88=c1,c2
+ 
+     let d8 = d88
+ 
+     d8  line lstyle 3 lwidth 0.05
+     fill d88 color yellow
+
+
+ 
+     data EOS2.pngX.dat  d87=c1,c2
+ 
+     let d9 = d87
+
+     d9  line lstyle 2 lwidth 0.05 
+
+     data Brown2014.dat d32=c1,c2 d33=c1,c3 d34=c1,c4
+     d32 marker fcircle color red errup d34 errdown d33
+  
+end graph  
+ 
+
+begin key
+position tl
+hei .5
+nobox
+marker fcircle color red text "Brown Schwenk 2014"
+end key
+
+begin key
+position tr
+hei .5
+nobox
+text "SNM"
+end key
+
+begin key
+position br
+hei .6
+nobox
+text "(b)  "
+end key
+
+
+
+ 
+
+

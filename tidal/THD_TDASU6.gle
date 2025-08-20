@@ -1,0 +1,132 @@
+size 13 25
+
+amove 1 2
+begin graph
+
+        nobox
+        size 12 10
+	
+	nobox
+	xtitle "PAISO"
+	ytitle "\Lambda_{1.4}"
+        yaxis min 0 max 1250 dticks 250 hei .5
+        yticks length .1
+        xaxis min -3 max 3 dticks 1 hei .5
+        xticks length .1
+
+	   
+	 data   BL.dat d1=c1,c9
+         d1 marker fcircle color red
+
+
+
+	
+
+	data DY.dat d7=c1,c9
+	d7 marker ftriangle color blue
+ 
+	
+
+	data HB.dat d12=c1,c9
+	d12 marker fsquare color green
+
+
+
+	data isotropik.dat d17=c1,c9
+	d17 marker fdiamond color black
+        
+	let d18=800 from -3 to 3
+	let d19=110 from -3 to 3
+        d18 line lstyle 1 lwidth 0.05 color black
+	d19 line lstyle 1 lwidth 0.05 color black
+
+	fill d18,d19 color gray
+
+        let d28=600 from -3 to 3
+        let d29=0   from -3 to 3
+
+        fill d28,d29 color orange
+
+end graph
+
+begin key
+position tl
+ hei .3
+nobox
+marker fcircle color red  text "PAISO = \lambda_{BL}"
+marker ftriangle color blue text "PAISO = \Upsilon"
+marker fsquare color green text "PAISO = (-8h+7)"
+marker fdiamond color black text "PAISO = 0"
+end key
+begin key
+position br
+ hei .3
+nobox
+text "(b)"
+end key
+
+amove 1 13
+begin graph
+
+        nobox
+        size 12 10
+	
+	nobox
+	xtitle "R_{1.4} (km)"
+	ytitle "\Lambda_{1.4}"
+        yaxis min 0 max 1250 dticks 250 hei .5
+        yticks length .1
+        xaxis min 10 max 15 dticks 1 hei .5
+        xticks length .1
+
+	   
+	 data   BL.dat d1=c2,c9
+         d1 marker fcircle color red
+
+
+
+	
+
+	data DY.dat d7=c2,c9
+	d7 marker ftriangle color blue
+ 
+	
+
+	data HB.dat d12=c2,c9
+	d12 marker fsquare color green
+
+
+
+	data isotropik.dat d17=c2,c9
+	d17 marker fdiamond color black
+
+        data GW170817.dat d18=c1,c2
+        d18 line lstyle 1 lwidth 0.03 color black
+	
+
+	fill d18 color gray
+
+        data LandryTidal14.dat d34=c2,c3 d35=c2,c4 d36=c2,c5  d37=c2,c6 d38=c2,c7 
+        d34 marker fsquare color indigo  herrleft d35 herrright d36 errup d38 errdown d37
+
+        data JiangTidal14.dat d24=c2,c3 d25=c2,c4 d26=c2,c5 d27=c2,c6 d28=c2,c7
+        d24 marker fcircle color magenta  herrleft d25 herrright d26 errup d28 errdown d27
+
+end graph
+
+
+begin key
+position tl
+ hei .3
+nobox
+marker fsquare color grey text "GW170817"
+marker fsquare color orange text "GW190425"
+marker fsquare color indigo text "Landry et al 2020"
+marker fcircle color magenta text "Jiang et al 2019"
+end key
+begin key
+position br
+ hei .3
+nobox
+text "(a)"
+end key

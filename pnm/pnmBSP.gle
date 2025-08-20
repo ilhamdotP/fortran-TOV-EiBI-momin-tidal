@@ -1,0 +1,135 @@
+size 13 24 
+set hei .9 just cent
+
+amove 1 12
+begin graph
+    dn msize 0.7
+    nobox 
+    size 12 10 
+
+    nobox
+
+     xaxis min 0 max 5 dticks 1  hei .7 
+    xticks length 0.3 
+
+
+     yaxis  min 0 max 300 dticks 60 hei .7 
+     yticks length 0.3
+     xtitle "\rho_N/\rho_0" hei .9
+     ytitle " P (MeV fm^{-3})"  hei .9
+
+    
+    data basicOES_PNM_BSP.dat  d12=c1,c2
+    let d1 = d12
+    d1 line lstyle 1 lwidth 0.1 color purple
+
+    data basicOES_PNM_BKA22.dat  d22=c1,c2
+    let d2 = d22
+    d2 line lstyle 2 lwidth 0.1 color red
+
+
+    data basicOES_PNM_BSR12.dat  d32=c1,c2
+    let d3 = d32
+    d3 line lstyle 3 lwidth 0.1 color blue
+    
+     data daniel.dat  d88=c2,c4
+ 
+     let d8 = d88
+     
+     fill x1,d88 color grey50
+     d8  line lstyle 2 lwidth 0.05 color black     
+     
+    
+
+     data daniel.dat  d98=c2,c5
+ 
+     let d9 = d98
+    
+     fill x1,d98 color grey20
+     d9  line lstyle 3 lwidth 0.05 color black
+     
+     
+
+end graph
+
+
+
+
+begin key
+position br
+ hei .5
+nobox
+text "(a)"
+end key
+
+
+
+begin key
+position tl
+ hei .5
+nobox
+line lstyle 1 lwidth 0.1 color purple text "BSP"
+line lstyle 2 lwidth 0.1 color red text "BKA22"
+line lstyle 3 lwidth 0.1 color blue text "BSR12"
+end key
+
+
+
+amove 1 1
+begin graph
+    dn msize 0.4
+    nobox 
+    size 12 10 
+
+    nobox
+
+    xaxis min 0 max 0.15 dticks 0.03 hei .6
+      xticks length 0.3
+     yaxis  min 0 max 20 dticks 4  hei .6
+      yticks length 0.3
+     ytitle "E/A (MeV) "  hei .8
+     xtitle "\rho_N (fm^{-3})" hei .8
+
+ 
+ 
+    data basicBE_PNM_BSP.dat d12=c2,c3
+    let d1 = d12
+    d1 line lstyle 1 lwidth 0.1 color purple
+
+    data basicBE_PNM_BKA22.dat  d22=c2,c3
+    let d2 = d22
+    d2 line lstyle 2 lwidth 0.1 color red
+
+  
+    data basicBE_PNM_BSR12.dat  d32=c2,c3
+    let d3 = d32
+    d3 line lstyle 3 lwidth 0.1 color blue
+     
+
+    data 1fUMhz.png.dat  d17=c1,c2
+    d17 line lstyle 4 lwidth 0.05
+    fill d17 color yellow
+
+
+
+
+ 
+end graph
+
+
+begin key
+position tl
+ hei .5
+nobox
+text "PNM"
+end key
+
+begin key
+position br
+ hei .5
+nobox
+text "(b)"
+end key
+
+
+

@@ -1,0 +1,142 @@
+size 13 25
+
+amove 1 2
+begin graph
+
+        dn msize 0.2
+	nobox
+        size 12 10	
+	
+	nobox
+	xtitle "M(M_{\odot})"
+	ytitle "\Lambda"
+        yaxis min 0 max 1600 dticks 400 hei .5
+        yticks length .1
+        xaxis min 0.5 max 2.25 dticks 0.5 hei .5 
+        xticks length .1
+
+	   
+	 data TIDAL_Y2_NS_1_SU6_BL_182_PCC230.dat d1=c2,c8
+         d1 line lstyle 1  color green lwidth 0.1
+
+	data TIDAL_Y2_NS_1_DY_115_PCC230.dat d2=c2,c8
+	d2 line lstyle 2 color red lwidth 0.1
+
+	data TIDAL_Y2_NS_1_SU6_HB_08_PCC230.dat d3=c2,c8
+	d3 line lstyle 3 color blue lwidth 0.1	 
+
+	data TIDAL_Y2_NS_1_SU6_ISOTROPIK.dat d4=c2,c8
+	d4 line lstyle 4 color black lwidth 0.1
+
+        data lambda_massa_DNS.dat d54=c1,c2 d55=c1,c3 d56=c1,c4 
+        d54 marker fdiamond color lightgreen  errup d55 errdown d56
+
+data lambda_massa_MSP.dat d7=c1,c2 d75=c1,c3 d76=c1,c4 d77=c1,c5 d78=c1,c6
+d7 marker fcircle color lightblue herrleft d75 herrright d76 errup d78 errdown d77
+
+data lambda_massa_LMXB1.dat d9=c1,c2 d95=c1,c3 d96=c1,c4 d97=c1,c5 d98=c1,c6
+d9 marker fsquare color pink herrleft d95 herrright d96 errdown d97 errup d98
+
+        data LandryTidal14.dat d34=c1,c3 d35=c1,c6 d36=c1,c7 
+        d34 marker fsquare color indigo  errup d35 errdown d36
+
+        data JiangTidal14.dat d24=c1,c3 d25=c1,c6 d26=c1,c7 
+        d24 marker fcircle color magenta  errup d25 errdown d26
+
+end graph
+
+begin key
+position tr
+ hei .3
+nobox
+line lstyle 1 lwidth 0.05 color green text "\lambda_{BL} = 1.82"
+line lstyle 2 lwidth 0.05  color red text "\Upsilon = -1.15"
+line lstyle 3 lwidth 0.05 color blue text "h = 0.8"
+line lstyle 4 lwidth 0.05 color black text "ISO"
+end key
+
+begin key
+position tl
+ hei .3
+nobox
+marker fsquare color indigo text "Landry et al 2020"
+marker fcircle color magenta text "Jiang et al 2019"
+end key
+begin key
+position bl
+hei .5
+nobox
+text "(b)"
+end key
+amove 1 13
+begin graph
+
+        dn msize 0.2
+	nobox
+        size 12 10
+	
+	nobox
+	
+	xtitle "R (km)"
+	ytitle "\Lambda"
+	
+     	yaxis min 0 max 1600 dticks 400 hei .5
+        yticks length .1
+   
+        xaxis min 9 max 14 dticks 1 hei .5 nofirst
+        xticks length .1
+
+
+	   
+	 data   TIDAL_Y2_NS_1_SU6_BL_182_PCC230.dat d1=c1,c8
+         d1 line lstyle 1  color green lwidth 0.1
+
+	data TIDAL_Y2_NS_1_DY_115_PCC230.dat d2=c1,c8
+	d2 line lstyle 2 color red lwidth 0.1
+
+	data TIDAL_Y2_NS_1_SU6_HB_08_PCC230.dat d3=c1,c8
+	d3 line lstyle 3 color blue lwidth 0.1	 
+
+	data TIDAL_Y2_NS_1_SU6_ISOTROPIK.dat d4=c1,c8
+	d4 line lstyle 4 color black lwidth 0.1
+
+
+
+       data lambda_radius_DNS.dat d54=c1,c2 d55=c1,c3 d56=c1,c4 d57=c1,c5 d58=c1,c6
+        d54 marker fdiamond color lightgreen herrleft d55 herrright d56 errup d58 errdown d57
+
+       data lambda_radius_MSP.dat d64=c1,c2 d65=c1,c3 d66=c1,c4 d67=c1,c5 d68=c1,c6
+        d64 marker fcircle color lightblue herrleft d65 herrright d66 errup d68 errdown d67
+
+
+        data lambda_radius_LMXB.dat d84=c1,c2 d85=c1,c3 d86=c1,c4 d87=c1,c5 d88=c1,c6
+        d84 marker fsquare color pink herrleft d85 herrright d86 errup d88 errdown d87
+
+
+
+      data LandryTidal14.dat d34=c2,c3 d35=c2,c4 d36=c2,c5  d37=c2,c6 d38=c2,c7 
+      d34 marker fsquare color indigo  herrleft d35 herrright d36 errup d38 errdown d37
+
+        data JiangTidal14.dat d24=c2,c3 d25=c2,c4 d26=c2,c5 d27=c2,c6 d28=c2,c7
+        d24 marker fcircle color magenta  herrleft d25 herrright d26 errup d28 errdown d27	
+
+
+
+
+end graph
+
+begin key
+position tl
+ hei .3
+nobox
+marker fdiamond color lightgreen text "DNS Kumar-Landry 2019"
+marker fcircle color lightblue text "MSP Kumar-Landry 2019"
+marker fsquare color pink text "LMXB  Kumar-Landry 2019"
+end key
+
+begin key
+position br
+hei .5
+nobox
+text "(a)"
+end key
