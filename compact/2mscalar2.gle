@@ -1,0 +1,162 @@
+size 28 24 
+set hei .7 just cent
+
+amove 1 1
+begin graph 
+    dn msize 0.25 
+    size 12 10
+    nobox
+
+    xaxis min 0.1 max 13.5  dticks 2.5  hei .6    
+    xticks length 0.3
+    yaxis  min 0 max 1.3 dticks 0.3 hei .6
+    yticks length 0.3
+    ytitle "{\it R} (10^{-12} cm^{-2})"  hei .7   
+    xtitle "r (km)" hei .7
+
+    
+
+
+    data ScalarBSPBL20.dat d11=c1,c3
+    let d1 = d11 
+    d1  line lstyle 1  lwidth 0.05 color green
+
+    data ScalarBSPDY20.dat  d21=c1,c3
+    let d2 = d21 
+    d2 line lstyle 2  lwidth 0.05 color red
+
+
+    data ScalarBSPHB20.dat d31=c1,c3
+    let d3 = d31 
+    d3  line lstyle 3  lwidth 0.05 color blue
+
+  
+end graph
+
+begin key
+position bl
+ hei .45
+nobox
+line lstyle 1 lwidth 0.05 color green text "A-BL"
+line lstyle 2 lwidth 0.05  color red text "A-DY"
+line lstyle 3 lwidth 0.05 color blue text "A-HB"
+end key 
+
+
+
+
+
+
+amove 1 12
+begin graph 
+    dn msize 0.25 
+    size 12 10
+    nobox
+
+    xaxis min 0.1 max 13.5 dticks 2.5 hei .6    
+    xticks length 0.3
+    yaxis  min 0 max 2.4 dticks 0.4 hei .6
+    yticks length 0.3
+    ytitle " {\it J} (10^{-12} cm^{-2})"  hei .7   
+    xtitle "r (km)" hei .7
+
+    
+
+
+    data ScalarBSPBL20.dat d11=c1,c4
+    let d1 = d11 
+    d1  line lstyle 1  lwidth 0.05 color green
+
+    data ScalarBSPDY20.dat  d21=c1,c4
+    let d2 = d21 
+    d2 line lstyle 2  lwidth 0.05 color red
+
+
+    data ScalarBSPHB20.dat d31=c1,c4
+    let d3 = d31 
+    d3  line lstyle 3  lwidth 0.05 color blue
+
+   
+   
+end graph
+
+begin key
+position tr
+ hei .5
+nobox
+text "1.4 M_{\odot}"
+end key 
+
+
+amove 14 1
+begin graph 
+    dn msize 0.25 
+    size 12 10
+    nobox
+
+    xaxis min 0.1 max 13.5 dticks 2.5 hei .6    
+    xticks length 0.3
+    yaxis  min 0 max 7 dticks 1.5 hei .6
+    yticks length 0.3
+    ytitle "{\it K} (10^{-12} cm^{-2})"  hei .7   
+    xtitle "r (km)" hei .7
+
+    
+
+
+    data ScalarBSPBL20.dat d11=c1,c5
+    let d1 = d11 
+    d1  line lstyle 1  lwidth 0.05 color green
+
+    data ScalarBSPDY20.dat  d21=c1,c5
+    let d2 = d21 
+    d2 line lstyle 2  lwidth 0.05 color red
+
+
+    data ScalarBSPHB20.dat d31=c1,c5
+    let d3 = d31 
+    d3  line lstyle 3  lwidth 0.05 color blue
+
+  
+   
+end graph
+
+begin key
+position tr
+ hei .5
+nobox
+text "BSP"
+end key 
+
+
+amove 14 12
+begin graph 
+    dn msize 0.25 
+    size 12 10
+    nobox
+
+    xaxis min 0.1 max 13.5 dticks 2.5 hei .6    
+    xticks length 0.3
+    yaxis  min 0 max 1.2 dticks 0.3 hei .6
+    yticks length 0.3
+    ytitle " {\it W } (10^{-12} cm^{-2})"  hei .7   
+    xtitle "r (km)" hei .7
+
+    
+
+
+    data ScalarBSPBL20.dat d11=c1,c6
+    let d1 = d11 
+    d1  line lstyle 1  lwidth 0.05 color green
+
+    data ScalarBSPDY20.dat  d21=c1,c6
+    let d2 = d21 
+    d2 line lstyle 2  lwidth 0.05 color red
+
+
+    data ScalarBSPHB20.dat d31=c1,c6
+    let d3 = d31 
+    d3  line lstyle 3  lwidth 0.05 color blue
+
+
+end graph

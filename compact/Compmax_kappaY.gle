@@ -1,0 +1,226 @@
+size 16 34
+set hei .7 just cent
+
+amove 2 2
+begin graph
+    dn msize 0.5
+    nobox 
+    size 14 10 
+
+
+      xaxis min -3 max 3 dticks 1  hei .6
+      xticks length 0.2
+      yaxis  min 0.1   max 0.4 dticks 0.1 hei .6 
+      yticks length 0.2
+      ytitle "C_{max}"  hei .6
+      xtitle "PAISO" hei .6
+
+ 
+
+       let d95 =0.7/2 from -3 to 3
+       let d96 =1.0/2 from -3 to 3 
+
+       fill d95,d96 color grey    
+
+
+
+       let d83 =(0.57+0.06)/2 from -3 to 3
+       let d84 =(0.57-0.06)/2 from -3 to 3 
+       
+       fill d83,d84 color  lightpink
+
+       let d93 =0.5/2 from -3 to 3
+       let d94 =0.6/2 from -3 to 3 
+       
+       fill d93,d94 color yellow 
+
+
+
+     data  ScalarBSPBL.dat d21=c1,c2
+     let d22=d21/2
+     d22 marker fcircle color red    
+ 
+     data  ScalarBSPDY.dat d31=c1,c2
+     let d32=d31/2
+     d32 marker ftriangle color blue  
+      
+     data  ScalarBSPHB.dat d51=c1,c2
+     let d52=d51/2
+     d52 marker fsquare color green   
+            
+     data  ScalarBSPISO.dat d71=c1,c2
+     let d72=d71/2
+     d72 marker fdiamond color black  
+
+end graph
+
+
+
+
+
+
+begin key
+position bl
+ hei .4
+nobox
+marker fcircle color  red  text "PAISO=\lambda_{BL}"
+marker ftriangle color  blue text "PAISO=\Upsilon"
+marker fsquare  color  green text "PAISO=(-8h+7)"
+marker fdiamond  color  black text "PAISO=0"
+end key
+
+begin key
+position br
+ hei .5
+nobox
+marker fsquare msize 0.4 color  yellow text "Ozel-Freire 2016"
+marker fsquare msize 0.4 color  lightpink text "Palenzuela-Liebling 2016"
+end key
+
+begin key
+position tr
+ hei .5
+nobox
+text "Noncausal region"
+end key
+
+begin key
+position tl
+ hei .5
+nobox
+text "(c)"
+end key
+
+
+amove 2 12
+begin graph 
+    dn msize 0.25 
+    size 14 10
+    nobox
+
+    xaxis min 0.1 max 13.5 dticks 2.5 hei .6    
+    xticks length 0.3
+    yaxis  min 0 max 0.3 dticks 0.05 hei .6
+    yticks length 0.3
+    ytitle "C(r)"  hei .7   
+    xtitle "r (km)" hei .7
+
+    
+
+
+    data ScalarBSPBL14.dat d11=c1,c2
+    let d1 = d11/2 
+    d1  line lstyle 1  lwidth 0.05 color green
+
+    data ScalarBSPDY14.dat  d21=c1,c2
+    let d2 = d21/2 
+    d2 line lstyle 2  lwidth 0.05 color red
+
+
+    data ScalarBSPHB14.dat d31=c1,c2
+    let d3 = d31/2 
+    d3  line lstyle 3  lwidth 0.05 color blue
+
+    data ScalarBSPI14.dat  d41=c1,c2
+    let d4 = d41/2 
+    d4 line lstyle 4  lwidth 0.05 color black
+
+    let d5=0.107*1.48 from 0.1 to 13.5
+    let d6=0.103*1.48 from 0.1 to 13.5
+
+    fill d5,d6 color  lightblue
+end graph
+
+begin key
+position tl
+ hei .5
+nobox
+line lstyle 1 lwidth 0.05 color green text "\lambda_{BL}=1.82"
+line lstyle 2 lwidth 0.05  color red text "\Upsilon=-1.15"
+line lstyle 3 lwidth 0.05 color blue text "h=0.8"
+line lstyle 4 lwidth 0.05 color black text "ISO"
+end key 
+
+begin key
+position tr
+ hei .5
+nobox
+text "1.4 M_{\odot}"
+marker fsquare color lightblue  text "RX J0720.4−3125"
+end key 
+
+
+begin key
+position bc
+ hei .5
+nobox
+text "BSP"
+end key 
+
+begin key
+position br
+ hei .5
+nobox
+text "(b)"
+end key
+amove 2 22
+begin graph 
+    dn msize 0.25 
+    size 14 10
+    nobox
+
+    xaxis min 0.1 max 13.5 dticks 2.5 hei .6    
+    xticks length 0.3
+    yaxis  min 0 max 0.3 dticks 0.05 hei .6
+    yticks length 0.3
+    ytitle "C(r) "  hei .7   
+    xtitle "r (km)" hei .7
+
+    
+
+
+    data ScalarBSPBL20.dat d11=c1,c2
+    let d1 = d11/2 
+    d1  line lstyle 1  lwidth 0.05 color green
+
+    data ScalarBSPDY20.dat  d21=c1,c2
+    let d2 = d21/2 
+    d2 line lstyle 2  lwidth 0.05 color red
+
+
+    data ScalarBSPHB20.dat d31=c1,c2
+    let d3 = d31/2 
+    d3  line lstyle 3  lwidth 0.05 color blue
+
+ 
+   
+end graph
+
+begin key
+position tl
+ hei .5
+nobox
+line lstyle 1 lwidth 0.05 color green text "\lambda_{BL}=1.82"
+line lstyle 2 lwidth 0.05  color red text "\Upsilon=-1.15"
+line lstyle 3 lwidth 0.05 color blue text "h=0.8"
+end key 
+
+begin key
+position tr
+ hei .5
+nobox
+text "2.0 M_{\odot}"
+end key 
+
+
+begin key
+position br
+ hei .5
+nobox
+text "(a)"
+end key
+
+
+
+
+

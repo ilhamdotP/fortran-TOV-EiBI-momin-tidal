@@ -1,0 +1,100 @@
+size 13 12 
+set hei .9 just cent
+
+amove 1 1
+begin graph
+    dn msize 0.7
+    nobox 
+    size 12 10 
+
+    
+    nobox
+
+    yaxis log  min 0.00001 max 1  hei .7 
+    xticks length 0.1 
+
+
+     xaxis  min 0 max 1 dticks 0.2 hei .7
+     yticks length 0.1
+     ytitle "Y_i" hei .9
+     xtitle " \rho_B [ fm^{-3}]"  hei .9
+
+  
+     data fraksibspSU6_aay.dat  d11=c2,c3 d12=c2,c4 d13=c2,c5
+     data fraksibspSU6_aay3.dat  d14=c2,c6  
+     data fraksibspSU6_aay1.dat  d15=c2,c7
+    
+     data fraksibspSU6_bay1.dat d21=c2,c3  
+     data fraksibspSU6_bay2.dat d24=c2,c6
+     let d1 = d11
+     d1 line lstyle 1 lwidth 0.1 color red
+
+     
+     let d2 = d12
+     d2 line lstyle 2 lwidth 0.1 color blue
+
+     
+     let d3 = d13
+     d3 line lstyle 3 lwidth 0.1 color green
+
+
+     let d7 = d14
+     d7 line lstyle 7 lwidth 0.1 color orange
+
+     let d9 = d15
+     d9 line lstyle 9 lwidth 0.1 color pink
+
+     let d4 = d21
+     d4 line lstyle 4 lwidth 0.1 color brown
+
+     
+!     let d5 = d22
+!     d5 line lstyle 5 lwidth 0.1 color purple
+
+     
+!     let d6 = d23
+!     d6 line lstyle 6 lwidth 0.1 color yellow   
+ 
+     let d8 = d24
+     d8 line lstyle 8 lwidth 0.1 color black
+
+!    let d10 = d25
+!    d10 line lstyle 10 lwidth 0.1 color grey
+    
+end graph
+
+
+set hei .7
+ amove xg(0.0) yg(0.00001) 
+    save b2
+    amove xg(0.0) yg(1.0)  
+    save b3
+    join b2 - b3 
+
+
+
+
+
+begin key
+position br
+ hei .4
+nobox
+line lstyle 1 color  red  lwidth 0.1 text "Y_{p^+}"
+line lstyle 2 color  blue  lwidth 0.1 text "Y_{n^0}"
+line lstyle 3 color  green  lwidth 0.1 text "Y_{e^-}"
+line lstyle 7 color  orange  lwidth 0.1 text "Y_{\mu^-}"
+line lstyle 9 color  pink  lwidth 0.1 text "Y_{\Lambda^0}"
+line lstyle 4 color  brown  lwidth 0.1 text "Y_{\Sigma^-}"
+!line lstyle 5 color  purple lwidth 0.1 text "Y_{\Sigma^0}"
+!line lstyle 6 color  yellow  lwidth 0.1 text "Y_{\Sigma^+}"
+line lstyle 8 color  black  lwidth 0.1 text "Y_{\Xi^-}"
+!line lstyle 10 color  grey  lwidth 0.1 text "Y_{\Xi^0}"
+end key
+
+begin key
+position tl
+ hei .45
+nobox
+ text "BSP SU(6)"
+end key
+

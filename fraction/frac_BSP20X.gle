@@ -1,0 +1,243 @@
+size 14 38 
+set hei .9 just cent
+
+amove 1 2
+begin graph
+    dn msize 0.7
+    nobox 
+    size 12 10 
+
+    
+    nobox
+
+    yaxis log min 0.0001 max 2  hei .7 
+    xticks length 0.1  
+
+
+     xaxis  min 0 max 11.1 dticks 2 hei .7
+     yticks length 0.1
+     ytitle "Y_i" hei .9
+     xtitle " r [km]"  hei .9
+
+  
+     data  FRACBSPBL2A.dat d11=c7,c2 d12=c7,c3 d13=c7,c4 d14=c7,c5
+     data  FRACBSPBL2A2.dat d15=c7,c6 
+     data  FRACBSPBL2B.dat d24=c7,c2 d25=c7,c5
+     let d1 = d11
+     d1 line lstyle 1 lwidth 0.1 color red
+
+     
+     let d2 = d12
+     d2 line lstyle 2 lwidth 0.1 color blue
+
+     
+     let d3 = d13
+     d3 line lstyle 3 lwidth 0.1 color green
+
+
+     let d7 = d14
+     d7 line lstyle 7 lwidth 0.1 color orange
+
+     let d9 = d15
+     d9 line lstyle 9 lwidth 0.1 color pink
+
+     let d4 = d24
+     d4 line lstyle 4 lwidth 0.1 color magenta
+
+     
+     let d3 = d25
+     d5 line lstyle 5 lwidth 0.1 color purple
+  let d4 = d24
+     d4 line lstyle 4 lwidth 0.1 color magenta
+
+     
+     let d3 = d25
+     d5 line lstyle 5 lwidth 0.1 color purple
+ 
+
+
+    
+end graph
+
+
+
+
+begin key
+position br
+ hei .5
+nobox
+line lstyle 1 color  red  lwidth 0.1 text "Y_{p^+}"
+line lstyle 2 color  blue  lwidth 0.1 text "Y_{n^0}"
+line lstyle 3 color  green  lwidth 0.1 text "Y_{e^-}"
+line lstyle 7 color  orange  lwidth 0.1 text "Y_{\mu^-}"
+end key
+
+begin key
+position bl
+ hei .7
+nobox
+text "\lambda_{BL}=1.82"
+end key
+
+begin key
+position tl
+hei .5
+nobox
+text "(c)"
+end key
+
+amove 1 13
+begin graph
+    dn msize 0.7
+    nobox 
+    size 12 10 
+
+    
+    nobox
+
+    yaxis log min 0.0001 max 2  hei .7 
+    xticks length 0.1  
+
+
+     xaxis  min 0 max 11.1 dticks 2 hei .7
+     yticks length 0.1
+     ytitle "Y_i" hei .9
+     xtitle " r [km]"  hei .9
+
+  
+     data  FRACBSPDY2A.dat d11=c7,c2 d12=c7,c3 d13=c7,c4 d14=c7,c5
+     data  FRACBSPDY2A2.dat d15=c7,c6 
+     data  FRACBSPDY2B.dat d24=c7,c2 d25=c7,c5
+     let d1 = d11
+     d1 line lstyle 1 lwidth 0.1 color red
+
+     
+     let d2 = d12
+     d2 line lstyle 2 lwidth 0.1 color blue
+
+     
+     let d3 = d13
+     d3 line lstyle 3 lwidth 0.1 color green
+
+
+     let d7 = d14
+     d7 line lstyle 7 lwidth 0.1 color orange
+
+     let d9 = d15
+     d9 line lstyle 9 lwidth 0.1 color pink
+
+ 
+      let d4 = d24
+     d4 line lstyle 4 lwidth 0.1 color magenta
+
+     
+     let d3 = d25
+     d5 line lstyle 5 lwidth 0.1 color purple
+ 
+    
+end graph
+
+
+begin key
+position bl
+ hei .7
+nobox
+text "\Upsilon=-1.15"
+end key
+
+begin key
+position tl
+hei .5
+nobox
+text "(b)"
+end key
+
+
+amove 1 24
+begin graph
+    dn msize 0.7
+    nobox 
+    size 12 10 
+
+    
+    nobox
+
+    yaxis log min 0.0001 max 2  hei .7 
+    xticks length 0.1  
+
+
+     xaxis  min 0 max 11.1 dticks 2 hei .7
+     yticks length 0.1
+     ytitle "Y_i" hei .9
+     xtitle " r [km]"  hei .9
+
+  
+     data  FRACBSPHB2A.dat d11=c7,c2 d12=c7,c3 d13=c7,c4 d14=c7,c5
+     data  FRACBSPHB2A2.dat d15=c7,c6
+     data  FRACBSPHB2B.dat d24=c7,c2 d25=c7,c5
+     
+     let d1 = d11
+     d1 line lstyle 1 lwidth 0.1 color red
+
+     
+     let d2 = d12
+     d2 line lstyle 2 lwidth 0.1 color blue
+
+     
+     let d3 = d13
+     d3 line lstyle 3 lwidth 0.1 color green
+
+
+     let d7 = d14
+     d7 line lstyle 7 lwidth 0.1 color orange
+
+     let d9 = d15
+     d9 line lstyle 9 lwidth 0.1 color pink
+
+   let d4 = d24
+     d4 line lstyle 4 lwidth 0.1 color magenta
+
+     
+     let d3 = d25
+     d5 line lstyle 5 lwidth 0.1 color purple
+     let d4 = d24
+     d4 line lstyle 4 lwidth 0.1 color magenta
+
+     
+     let d3 = d25
+     d5 line lstyle 5 lwidth 0.1 color purple
+ 
+    
+end graph
+
+
+
+begin key
+position bl
+ hei .7
+nobox
+text "h=0.8"
+end key
+
+
+
+begin key
+position br
+ hei .5
+nobox
+line lstyle 9 color  pink  lwidth 0.1 text "Y_{\Lambda^0}"
+line lstyle 4 color  magenta  lwidth 0.1 text "Y_{\Sigma^-}"
+line lstyle 5 color  purple  lwidth 0.1 text "Y_{\Xi^-}"
+end key
+
+
+
+
+
+
+begin key
+position tl
+hei .5
+nobox
+text "(a)"
+end key
