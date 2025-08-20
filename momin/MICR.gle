@@ -1,0 +1,161 @@
+size 14 38
+set hei .7 just cent
+
+amove 1 2
+begin graph
+    dn msize 0.5
+    nobox 
+    size 12 10 
+    
+
+    nobox
+
+     xaxis min 0.5  max 2.5 dticks 0.5 hei .6
+     xticks length 0.3
+     yaxis  min 0 max 12 dticks 3 hei .6 nolast
+      yticks length 0.3
+     ytitle "I_{cr}/I (%) "  hei .7
+     xtitle "M (M_{\odot})" hei .7
+
+     data BSP_CRMIAIBLX.dat   d21=c2,c5
+     d21 line lstyle 1 color green lwidth 0.05  
+           
+
+     data  BSP_CRMIAIDYX.dat d41=c2,c5 
+     d41 line lstyle 2 color red lwidth 0.05
+
+     data BSP_CRMIAIHBX.dat  d51=c2,c5 
+     d51 line lstyle 3 color blue lwidth 0.05
+    
+    data  BSP_CRMISIX.dat d31=c2,c5 
+     d31 line lstyle 4 color black lwidth 0.05 
+    
+ 	data constraint_low_crust.dat d5=c1,c2
+	d5 line lstyle 1 color brown lwidth 0.1
+
+	data constraint_high_crust.dat d6=c1,c2
+	d6 line lstyle 1 color yellow lwidth 0.1
+	
+ 
+end graph
+
+begin key
+set hei .5
+amove xg(1.4) yg(8)
+tex "Allowed"  
+amove xg(1.75) yg(6)
+tex "Allowed by 1.4 \%,"
+amove xg(1.75) yg(5)
+tex "Forbidden by 7 \%"
+amove xg(1.2) yg(0.55)
+tex "Forbidden"
+end key
+
+begin key
+position bl
+ hei .45
+nobox
+text "(c)"
+end key
+
+amove 1 13
+begin graph
+    dn msize 0.5
+    nobox 
+    size 12 10 
+    
+
+    nobox
+
+      xaxis min 0.5  max 2.5 dticks 0.5 hei .6
+      xticks length 0.3
+     yaxis  min 0 max 7.5 dticks 1.5  hei .6 nofirst nolast
+      yticks length 0.3
+     ytitle "M_{cr}/M (%) "  hei .7
+     xlabels off
+
+     
+     data BSP_CRMIAIBLX.dat   d21=c2,c6
+     d21 line lstyle 1 color green lwidth 0.05   
+ 
+     
+           
+
+     data  BSP_CRMIAIDYX.dat d41=c2,c6 
+     d41 line lstyle 2 color red lwidth 0.05
+
+     data BSP_CRMIAIHBX.dat  d51=c2,c6 
+     d51 line lstyle 3 color blue lwidth 0.05
+    
+     data  BSP_CRMISIX.dat d31=c2,c6 
+     d31 line lstyle 4 color black lwidth 0.05     
+   
+ 
+ 
+end graph
+begin key
+position tr
+ hei .45
+nobox
+line lstyle 1 lwidth 0.05 color green text "\lambda_{BL} = 1.82"
+line lstyle 2 lwidth 0.05  color red text "\Upsilon = -1.15"
+line lstyle 3 lwidth 0.05 color blue text "h = 0.8"
+line lstyle 4 lwidth 0.05 color black text "ISO"
+end key
+
+begin key
+position bl
+ hei .45
+nobox
+text "(b)"
+end key
+
+
+amove 1 24
+begin graph
+    dn msize 0.5
+    nobox 
+    size 12 10 
+    
+
+    nobox
+
+    xaxis min 0.5 max 2.5 dticks 0.5  hei .6
+    xticks length 0.3
+    yaxis  min 0 max 25 dticks 5  hei .6 nofirst
+    yticks length 0.3
+    ytitle "\Delta R_{cr}/R (%) "  hei .7
+    xlabels off
+    x2labels off
+!    x2title "M (M_{\odot})" hei .7
+!	x2axis min 1.0 max 2.2 dticks 0.4  hei .6
+
+
+     
+
+     data  BSP_MIAIBLX.dat  d21=c5,c3 d23=c5,c4
+     let d2 = (d21-d23)*100/d21
+     d2 line lstyle 1 color green lwidth 0.05  
+
+     data  BSP_MIAIDYX.dat d22=c5,c3 d24=c5,c4
+     let d3 = (d22-d24)*100/d22
+     d3 line lstyle 2 color red lwidth 0.05 
+ 
+     data  BSP_MIAIHBX.dat d31=c5,c3  d33=c5,c4
+     let d4 = (d31-d33)*100/d31
+     d4 line lstyle 3 color blue lwidth 0.05  
+           
+
+     data BSP_MISIX.dat  d32=c5,c3  d34=c5,c4
+     let d5 = (d32-d34)*100/d32
+     d5 line lstyle 4 color black lwidth 0.05
+
+
+end graph
+
+begin key
+position bl
+ hei .45
+nobox
+text "(a)"
+end key

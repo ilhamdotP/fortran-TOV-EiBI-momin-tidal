@@ -1,0 +1,149 @@
+size 13 25 
+set hei .9 just cent
+
+amove 1 13
+begin graph
+    dn msize 0.2
+    nobox 
+    size 12 10 
+
+    
+    nobox
+
+    yaxis  min 11.5 max 14 dticks 1  hei .7
+    yxticks length 0.3 
+
+    xaxis min 0 max 200 dticks 40   hei .7
+    xticks length 0.5 
+    xsubticks length 0.3
+    
+    
+     xtitle "P_c [MeV fm^{-3}]" hei .9
+     ytitle " R [km ]"  hei .9
+
+
+     data  RadmassBSP_BL.dat d61=c2,c5
+     let d6 = d61
+     d6 line lstyle 2 color purple lwidth 0.1
+
+     data  RadmassBSP_DY.dat d62=c2,c5
+     let d5 = d62
+     d5 line lstyle 3 color green lwidth 0.1
+
+     data RadmassBSP_HB.dat  d63=c2,c5
+     let d4 = d63
+     d4 line lstyle 4 color blue lwidth 0.1
+
+
+     data RadmassBSP_I.dat  d71=c2,c5
+     let d7 = d71
+     d7 line lstyle 1 color red lwidth 0.1  
+
+  
+     
+   
+ 
+  
+   
+end graph
+begin key
+position tr
+hei .5
+nobox
+line lstyle 1 lwidth 0.1 color red text "ISO"
+line lstyle 2 lwidth 0.1 color purple text "\lambda_{BL}=1.82"
+line lstyle 3 lwidth 0.1 color green text "\Upsilon=-1.15"
+line lstyle 4 lwidth 0.1 color blue text "h=0.8"
+end key
+
+begin key
+position bl
+hei .5
+nobox
+text "(a)"
+end key
+begin key
+set hei .5
+amove xg(50) yg(11.85)
+tex "$\leftarrow \rm 48 ~MeV ~fm^{-3}$"  
+end key
+
+
+    amove xg(48) yg(11.5)
+    save b2
+    amove xg(48) yg(14)
+    save b3
+    join b2 - b3
+
+amove 1 2
+begin graph
+    dn msize 0.2
+    nobox 
+    size 12 10 
+
+    
+    nobox
+
+    yaxis  min 0.5 max 2.2 dticks 0.4  hei .7
+    yxticks length 0.3 
+
+    xaxis min 0 max 200 dticks 40   hei .7
+    xticks length 0.5 
+    xsubticks length 0.3
+    
+    
+     xtitle "P_c [MeV fm^{-3}]" hei .9
+     ytitle " M [M_{\odot} ]"  hei .9
+
+
+     data  RadmassBSP_BL.dat d61=c2,c6
+     let d6 = d61
+     d6 line lstyle 2 color purple lwidth 0.1
+
+     data  RadmassBSP_DY.dat d62=c2,c6
+     let d5 = d62
+     d5 line lstyle 3 color green lwidth 0.1
+
+     data RadmassBSP_HB.dat  d63=c2,c6
+     let d4 = d63
+     d4 line lstyle 4 color blue lwidth 0.1
+
+
+     data RadmassBSP_I.dat  d71=c2,c6
+     let d7 = d71
+     d7 line lstyle 1 color red lwidth 0.1  
+
+  
+     let d22 = 2.0 from 0 to 200
+     d22  line lstyle 2 color black 
+   
+ 
+     let d33 = 1.4 from 0 to 200
+     d33  line lstyle 2 color black 
+   
+end graph
+
+begin key
+position tl
+hei .5
+nobox
+text "(b)"
+end key
+
+    amove xg(48) yg(0.5)
+    save b2
+    amove xg(48) yg(2.2)
+    save b3
+    join b2 - b3
+
+begin key
+position bl
+hei .5
+nobox
+text "(a)"
+end key
+begin key
+set hei .5
+amove xg(50) yg(1)
+tex "$\leftarrow \rm 48 ~MeV ~fm^{-3}$"  
+end key

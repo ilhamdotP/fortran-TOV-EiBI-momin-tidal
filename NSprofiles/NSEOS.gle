@@ -1,0 +1,132 @@
+size 13 25 
+set hei .9 just cent
+
+amove 1 2
+begin graph
+    dn msize 0.2
+    nobox 
+    size 12 10 
+
+    
+    nobox
+
+    yaxis  min 150 max 900 dticks 200  hei .7
+    yticks length 0.3 
+
+    xaxis min 0 max  200 dticks 40   hei .7
+    xticks length 0.3 
+  
+    
+    
+     ytitle "\epsilon [MeV fm^{-3}]" hei .9
+     xtitle " P [MeV fm^{-3} ]"  hei .9
+
+
+     data  eosfit1BSP.dat d61=c1,c2
+     let d6 = d61
+     d6 line lstyle 4 color purple lwidth 0.1
+
+     data  eosfit1bspSU6a.dat d71=C1,c2
+     let d7 = d71
+     d7 line lstyle 5 color red lwidth 0.1  
+
+  
+     data  PRESSBKA22.dat d81=c2,c3
+     let d8 = d81
+     d8 line lstyle 3 color pink lwidth 0.1
+ 
+  
+   
+end graph
+begin key
+position br
+hei .5
+nobox
+line lstyle 4 lwidth 0.1 color purple text " BSP without Hyperons"
+line lstyle 3 lwidth 0.1 color pink text " BKA22 without Hyperons"
+line lstyle 5 lwidth 0.1 color red text " BSP with Hyperons"
+end key
+
+    amove xg(48) yg(150)
+    save b2
+    amove xg(48) yg(900)
+    save b3
+    join b2 - b3
+
+begin key
+set hei .5
+amove xg(50) yg(800)
+tex "$\leftarrow \rm 48 ~MeV ~fm^{-3}$"  
+end key
+   
+begin key
+position tl
+hei .5
+nobox
+text "(b)"
+end key
+
+amove 1 13
+begin graph
+    dn msize 0.2
+    nobox 
+    size 12 10 
+
+    
+    nobox
+
+    yaxis log  min 0.02 max 1000   hei .7
+    yxticks length 0.3 
+
+    xaxis min 0 max 7 dticks 2    hei .7
+    xticks length 0.5 
+    xsubticks length 0.3
+    
+    
+     ytitle "P [MeV fm^{-3}]" hei .9
+     xtitle " \rho/\rho_{nuc} "  hei .9
+
+
+    
+     data  PRESSBSP.dat d61=c1,c2
+     let d6 = d61
+     d6 line lstyle 4 color purple lwidth 0.1
+
+     data  PRESSBSPSU6.dat d71=c1,c2
+     let d7 = d71
+     d7 line lstyle 5 color red lwidth 0.1  
+
+     data  PRESSBKA22.dat d51=c1,c2
+     let d5 = d51
+     d5 line lstyle 3 color pink lwidth 0.1 
+
+      let d8=48 from 0 to 7
+      d8 line lstyle 1 color black 
+
+
+      data datpress.dat  d31=c1,c2 d32=c1,c3  d33=c1,c4
+      d31 marker fcircle color green errup d33 errdown d32
+
+      data datpressJ.dat  d21=c1,c2 d22=c1,c3  d23=c1,c4
+      d21 marker fsquare color blue errup d23 errdown d22
+
+      data datpressLigo.dat  d11=c1,c2 d12=c1,c3  d13=c1,c4
+      d11 marker fdiamond color magenta errup d13 errdown d12
+
+     end graph
+
+begin key
+position tl
+hei .5
+nobox
+text "(a)"
+end key
+
+begin key
+position br
+ hei .5
+nobox
+marker fcircle msize 0.3 color  green text "Landry et al 2020"
+marker fsquare msize 0.3 color  blue text "Jiang et al 2019"
+marker fdiamond msize 0.3 color  magenta text "Abbott et al 2018"
+end key

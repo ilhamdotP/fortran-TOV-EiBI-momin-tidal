@@ -1,0 +1,51 @@
+size 23 14
+set hei .7 just cent
+
+amove 2 2
+begin graph
+    dn msize 0.6
+    nobox 
+    size 20 11 
+    fullsize
+
+    nobox
+
+    xaxis min 0.1  max 2.2  hei .7
+      xticks length 0.3
+     yaxis  min 0 max 15  hei .7
+      yticks length 0.3
+     ytitle "M_{cr}/M (%) "  hei .7
+     xtitle "M (M_{\odot})" hei .7
+
+     
+     data BSP_CRMIAIBL.dat   d21=c2,c6
+     d21 line lstyle 5 color red lwidth 0.1   
+ 
+     data  BSP_CRMISI.dat d31=c2,c6 
+     d31 line lstyle 1 color blue lwidth 0.1  
+           
+
+     data  BSP_CRMIAIDY.dat d41=c2,c6 
+     d41 line lstyle 2 color magenta lwidth 0.1
+
+     data BSP_CRMIAIHB.dat  d51=c2,c6 
+     d51 line lstyle 3 color green lwidth 0.1
+    
+           
+   
+ 
+ 
+end graph
+
+begin key
+position bl
+ hei .7
+nobox
+line lstyle 5 color  red  lwidth 0.1 text "BL"
+line lstyle 1 color  blue  lwidth 0.1 text "Isotropic"
+line lstyle 2 color  magenta  lwidth 0.1 text "DY"
+line lstyle 3 color  green  lwidth 0.1 text "HB"
+end key
+
+
+

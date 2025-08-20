@@ -1,0 +1,216 @@
+size 14 38
+set hei .7 just cent
+
+amove 1 2
+begin graph
+    dn msize 0.25
+    nobox
+    size 12 10 
+    
+
+    nobox
+
+    xaxis min 0.1 max 0.3 dticks 0.05 hei .6
+      xticks length 0.3
+     yaxis  min 0.3 max 0.47  hei .6 dticks 0.05 nofirst
+      yticks length 0.3
+     ytitle "I/MR^2 "  hei .7
+	xtitle "C" hei .7
+
+     
+ 
+     data BSP_COMPACTMOMINBLX.dat   d21=c1,c2
+     d21 line lstyle 5 color green lwidth 0.05   
+     
+
+     data  BSP_COMPACTMOMINDYX.dat d41=c1,c2 
+     d41 line lstyle 2 color red lwidth 0.05
+
+     data BSP_COMPACTMOMINHBX.dat  d51=c1,c2 
+     d51 line lstyle 3 color blue lwidth 0.05
+
+     data  BSP_COMPACTMOMINISOX.dat d31=c1,c2
+	d31 line lstyle 1 color black lwidth 0.05
+
+	data Batas_Bawah_Lattimer.dat d5=c1,c2
+	d5 marker fcircle color brown
+
+	data Batas_Atas_Lattimer.dat d6=c1,c2
+	d6 marker fcircle color brown
+
+	
+
+	data Batas_Bawah_Rezzola.dat d7=c1,c2
+	d7 marker fsquare color lightgreen
+
+	data Batas_Atas_Rezzola.dat d8=c1,c2
+	d8 marker fsquare color lightgreen
+
+	
+
+
+end graph
+
+begin key
+position tc
+ hei .5
+nobox
+line lstyle 5 lwidth 0.05 color green text "\lambda_{BL} = 1.82"
+line lstyle 2 lwidth 0.05 color red text "\Upsilon = -1.15"
+line lstyle 3 lwidth 0.05 color blue text "h=0.8"
+line lstyle 1 lwidth 0.05 color black text "ISO"
+end key
+
+begin key
+position br
+ hei .5
+nobox
+marker fcircle color brown text "Lattimer & Schutz (2005)"
+marker fsquare color lightgreen  text "Breu & Rezzolla (2016)"
+end key
+
+begin key
+position tl
+ hei .5
+nobox
+text "(c)"
+end key
+
+
+
+amove 1 13
+begin graph
+    dn msize 0.25
+    nobox 
+    size 12 10 
+    
+
+    nobox
+
+      xaxis min 0.5 max 2.5 dticks 0.5  hei .6
+      xticks length 0.3
+     yaxis  min 0.5 max 3.0  hei .6 
+      yticks length 0.3
+     ytitle "I (10^{45} g cm^2)"  hei .7
+	xtitle "M (M_{\odot})" hei .7
+	
+     
+     data BSP_MIAIBLX.dat   d21=c5,c7
+     d21 line lstyle 1 color green lwidth 0.05   
+           
+     data  BSP_MIAIDYX.dat d41=c5,c7 
+     d41 line lstyle 2 color red lwidth 0.05
+
+     data BSP_MIAIHBX.dat  d51=c5,c7 
+     d51 line lstyle 3 color blue lwidth 0.05
+
+     data  BSP_MISIX.dat d31=c5,c7 
+     d31 line lstyle 4 color brown lwidth 0.05
+
+     data InersiaLandry.dat d32=c1,c2 d33=c1,c3 d34=c1,c4
+     d32 marker fsquare color black errup d34 errdown d33
+     
+
+    data InersiaZhang.dat d72=c1,c2 d73=c1,c3 d74=c1,c4
+    d72 marker fcircle color indigo errup d74 errdown d73
+
+     data InersiaLim.dat d12=c1,c2 d13=c1,c3 d14=c1,c4
+    d12 marker fdiamond color purple errup d14 errdown d13
+
+   
+
+end graph
+
+begin key
+position tl
+hei .45
+nobox
+marker fsquare color black text "Landry et al 2020"
+marker fcircle color indigo text "Zhang et al 2019"
+marker fdiamond color purple text "Lim et al 2019"
+end key
+
+begin key
+position br
+ hei .45
+nobox
+line lstyle 1 lwidth 0.05 color green text "\lambda_{BL} = 1.82"
+line lstyle 2 lwidth 0.05 color red text "\Upsilon = -1.15"
+line lstyle 3 lwidth 0.05 color blue text "h=0.8"
+line lstyle 4 lwidth 0.05 color brown text "ISO"
+end key
+
+begin key
+position tr
+ hei .5
+nobox
+text "(b)"
+end key
+
+amove 1 24
+begin graph
+    dn msize 0.25
+    nobox 
+    size 12 10 
+    
+
+    nobox
+
+      xaxis min 0.5 max 2.5 dticks 0.5  hei .6
+      xticks length 0.3
+     yaxis  min 0.5 max 3.0  hei .6 
+      yticks length 0.3
+     ytitle "I (10^{45} g cm^2)"  hei .7
+	xtitle "M (M_{\odot})" hei .7
+	
+     
+     data BSP_MIAIBLX.dat   d21=c5,c7
+     d21 line lstyle 1 color green lwidth 0.05   
+           
+     data  BSP_MIAIDYX.dat d41=c5,c7 
+     d41 line lstyle 2 color red lwidth 0.05
+
+     data BSP_MIAIHBX.dat  d51=c5,c7 
+     d51 line lstyle 3 color blue lwidth 0.05
+
+     data  BSP_MISIX.dat d31=c5,c7 
+     d31 line lstyle 4 color brown lwidth 0.05
+
+    
+
+     data InersiaDNS.dat d75=c1,c2 d76=c1,c3 d77=c1,c4
+     d75 marker fdiamond color lightblue errup d77 errdown d76
+
+     data InersiaMMP.dat d84=c1,c2 d85=c1,c3 d86=c1,c4 d87=c1,c5 d88=c1,c6
+     d84 marker fcircle color lightgreen herrleft d85 herrright d86  errup d88 errdown d87
+
+    data InersiaLMXB.dat d14=c1,c2 d15=c1,c3 d16=c1,c4 d17=c1,c5 d18=c1,c6
+     d14 marker fcircle color pink herrleft d15 herrright d16  errup d18 errdown d17
+
+end graph
+
+begin key
+position tl
+hei .45
+nobox
+marker fdiamond color lightblue text "DNS Kumar-Landry 2019"
+marker fcircle color lightgreen text "MSP Kumar-Landry 2019"
+marker fsquare color pink text "LMXB Kumar-Landry 2019"
+end key
+begin key
+
+position tr
+ hei .5
+nobox
+text "(a)"
+end key
+
+begin key
+position br
+ hei .45
+nobox
+line lstyle 1 lwidth 0.05 color green text "\lambda_{BL} = 1.82"
+line lstyle 2 lwidth 0.05 color red text "\Upsilon = -1.15"
+line lstyle 3 lwidth 0.05 color blue text "h=0.8"
+line lstyle 4 lwidth 0.05 color brown text "ISO"
+end key
